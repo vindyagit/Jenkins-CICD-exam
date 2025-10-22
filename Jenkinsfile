@@ -22,11 +22,9 @@ pipeline {
 
           sh '''
 
-		  echo "Building images using Docker Compose..."
-
           docker rm -f jenkins
 
-          docker compose build
+          docker build -t $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG .
 
           sleep 6
 
