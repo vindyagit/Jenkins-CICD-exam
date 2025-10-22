@@ -55,7 +55,7 @@ pipeline {
 
           sh '''
 
-          curl localhost
+          curl localhost:8080
 
           '''
 
