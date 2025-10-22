@@ -74,7 +74,7 @@ service:
 
   nodePort: 30007  
 
-  targetPort: 8000
+  targetPort: 8080
 
 
 ingress:
