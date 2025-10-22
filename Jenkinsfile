@@ -18,9 +18,7 @@ pipeline {
 
       steps {
 
-        dir('/home/ubuntu/Jenkins-CICD-exam/')
-
-          sh 'docker compose build'
+          sh 'docker compose -f docker-compose.yml build'
 
 
       }
@@ -36,7 +34,7 @@ pipeline {
 
           sh '''
 
-          docker run -d -p 8080:8080 --name jenkins_exam $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
+          docker compose -f docker-compose.yml up -d
 
           sleep 10
 
