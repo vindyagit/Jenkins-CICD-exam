@@ -170,3 +170,11 @@ tolerations: []
 
 
 affinity: {}
+
+httpRoute:
+
+  enabled: false
+
+  annotations: {}
+
+  parentRefs: []
