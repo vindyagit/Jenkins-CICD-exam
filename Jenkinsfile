@@ -127,7 +127,7 @@ pipeline {
 
           cat values.yml
 
-          sed -i "s+tag.*+tag: {latest}+g" values.yml
+          sed -i "s+tag.*+tag: latest+g" values.yml
 
           helm upgrade --install app fastapiapp --values=values.yml --namespace dev
 
