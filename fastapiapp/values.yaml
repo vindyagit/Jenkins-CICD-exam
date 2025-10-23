@@ -19,7 +19,7 @@ movieService:
     CAST_SERVICE_HOST_URL: "http://cast-service:8000/api/v1/casts/"
 
 
-castservice:
+castService:
 
   replicaCount: 1
 
