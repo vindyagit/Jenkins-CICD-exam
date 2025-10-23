@@ -6,9 +6,9 @@ movieService:
 
     repository: vindyakishore/jenkins-cicd-pipeline-movie_service
 
-      tag: latest
+    tag: latest
 
-      pullPolicy: IfNotPresent
+    pullPolicy: IfNotPresent
 
   port: 8000
 
@@ -27,9 +27,9 @@ castService:
 
     repository: vindyakishore/jenkins-cicd-pipeline-cast_service
 
-      tag: latest
+    tag: latest
 
-      pullPolicy: IfNotPresent
+    pullPolicy: IfNotPresent
 
   port: 8000
 
