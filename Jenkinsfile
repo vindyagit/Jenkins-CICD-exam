@@ -82,7 +82,11 @@ pipeline {
 
           docker login -u $DOCKER_ID -p $DOCKER_PASS
 
+          docker tag jenkins-cicd-pipeline-movie_service:latest vindyakishore/jenkins-cicd-pipeline-movie_service:latest
+
           docker push vindyakishore/jenkins-cicd-pipeline-movie_service:latest
+  
+          docker tag jenkins-cicd-pipeline-cast_service:latest vindyakishore/jenkins-cicd-pipeline-cast_service:latest
 
           docker push vindyakishore/jenkins-cicd-pipeline-cast_service:latest   
 
