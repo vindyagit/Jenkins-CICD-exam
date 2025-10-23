@@ -4,8 +4,6 @@ pipeline {
 
     DOCKER_ID = "vindyakishore" // replace this with your docker-id
 
-    DOCKER_IMAGE = "jenkins_exam"
-
     DOCKER_TAG = "v.${BUILD_ID}.0" // we will tag our images with the current build in order to increment the value by 1 with each new build
 
   }
@@ -84,13 +82,13 @@ pipeline {
 
           docker login -u $DOCKER_ID -p $DOCKER_PASS
 
-          docker push jenkins-cicd-pipeline-movie_service:latest
+          docker push vindyakishore/jenkins-cicd-pipeline-movie_service:latest
 
-          docker push jenkins-cicd-pipeline-cast_service:latest
+          docker push vindyakishore/jenkins-cicd-pipeline-cast_service:latest
 
-          docker push nginx:latest
+          docker push vindyakishore/nginx:latest
           
-          docker push postgres:12.1-alpine   
+          docker push vindyakishore/postgres:12.1-alpine   
 
           '''
 
