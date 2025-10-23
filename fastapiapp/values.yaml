@@ -28,6 +28,8 @@ castservice:
 
     pullPolicy: IfNotPresent
 
+  replicaCount: 1
+
   port: 8000
 
   env:
