@@ -6,7 +6,7 @@ movieService:
 
     repository: vindyakishore/jenkins-cicd-pipeline-movie_service
 
-    tag: "latest"
+    tag: latest
 
     pullPolicy: IfNotPresent
 
@@ -27,7 +27,7 @@ castService:
 
     repository: vindyakishore/jenkins-cicd-pipeline-cast_service
 
-    tag: "latest"
+    tag: latest
 
     pullPolicy: IfNotPresent
 
