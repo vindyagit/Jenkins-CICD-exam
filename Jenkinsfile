@@ -84,11 +84,7 @@ pipeline {
 
           docker push vindyakishore/jenkins-cicd-pipeline-movie_service:latest
 
-          docker push vindyakishore/jenkins-cicd-pipeline-cast_service:latest
-
-          docker push vindyakishore/nginx:latest
-          
-          docker push vindyakishore/postgres:12.1-alpine   
+          docker push vindyakishore/jenkins-cicd-pipeline-cast_service:latest   
 
           '''
 
