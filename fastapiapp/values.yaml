@@ -80,6 +80,11 @@ nginx:
 
     }
 
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
 service:
 
   type: NodePort
