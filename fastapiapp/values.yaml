@@ -1,70 +1,79 @@
-# Default values for fastapiapp.
-
-# This is a YAML-formatted file.
-
-# Declare variables to be passed into your templates.
-
-
-replicaCount: 3
+replicaCount:3
 
 
 image:
 
-  repository: vindyakishore/jenkins_exam
+  repository: vindyakishore/jenkins-cicd-pipeline-movie_service
+
+  tag: latest
 
   pullPolicy: IfNotPresent
 
-  # Overrides the image tag whose default is the chart appVersion.
+port: 8000
 
-  tag: "latest"
+env:
 
+  DATABASE_URI: "postgresql://movie_db_username:movie_db_password@movie_db/movie_db_dev"
 
-imagePullSecrets: []
-
-nameOverride: ""
-
-fullnameOverride: ""
+  CAST_SERVICE_HOST_URL: "http://cast-service:8000/api/v1/casts/"
 
 
-serviceAccount:
+image:
 
-  # Specifies whether a service account should be created
+  repository: vindyakishore/jenkins-cicd-pipeline-cast_service
 
-  create: true
+  tag: latest
 
-  # Annotations to add to the service account
+  pullPolicy: IfNotPresent
 
-  annotations: {}
+port: 8000
 
-  # The name of the service account to use.
+env:
 
-  # If not set and create is true, a name is generated using the fullname template
-
-  name: ""
+  DATABASE_URI: "postgresql://cast_db_username:cast_db_password@cast_db/cast_db_dev"
 
 
-podAnnotations: {}
+image: postgres:12.1-alpine
+
+  POSTGRES_USER= movie_db_username
+
+  POSTGRES_PASSWORD= movie_db_password
+
+  POSTGRES_DB= movie_db_dev
 
 
-podSecurityContext: {}
+image: postgres:12.1-alpine
 
-  # fsGroup: 2000
+  POSTGRES_USER=cast_db_username
+
+  POSTGRES_PASSWORD=cast_db_password
+
+  POSTGRES_DB=cast_db_dev
 
 
-securityContext: {}
+image: nginx:latest
 
-  # capabilities:
+  port: 8080
 
-  #   drop:
+  config: |
 
-  #   - ALL
+    server {
 
-  # readOnlyRootFilesystem: true
+      listen 8080;
 
-  # runAsNonRoot: true
+      location /movies/ {
 
-  # runAsUser: 1000
+        proxy_pass http://movie-service:8000/;
 
+      }
+
+      location /casts/ {
+
+        proxy_pass http://cast-service:8000/;
+
+      }
+
+    }
 
 service:
 
