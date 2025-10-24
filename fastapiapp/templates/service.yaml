@@ -14,3 +14,76 @@ spec:
       name: http
   selector:
     {{- include "fastapiapp.selectorLabels" . | nindent 4 }}
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: movie-service
+
+spec:
+
+  selector:
+
+    app: movie-service
+
+  ports:
+
+    - port: {{ .Values.movieService.port }}
+
+      targetPort: {{ .Values.movieService.port }}
+
+  type: ClusterIP
+
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: cast-service
+
+spec:
+
+  selector:
+
+    app: cast-service
+
+  ports:
+
+    - port: {{ .Values.castService.port }}
+
+      targetPort: {{ .Values.castService.port }}
+
+  type: ClusterIP
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: nginx
+
+spec:
+
+  type: LoadBalancer
+
+  selector:
+
+    app: nginx
+
+  ports:
+
+    - port: 8080
+
+      targetPort: {{ .Values.nginx.port }}

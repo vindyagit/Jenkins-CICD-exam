@@ -151,3 +151,126 @@ spec:
           configMap:
 
             name: nginx-config
+
+---
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: movie-db
+
+spec:
+
+  selector:
+
+    matchLabels:
+
+      app: movie-db
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: movie-db
+
+    spec:
+
+      containers:
+
+        - name: movie-db
+
+          image: {{ .Values.movieDb.image }}
+
+          env:
+
+            - name: POSTGRES_USER
+
+              value: "{{ .Values.movieDb.username }}"
+
+            - name: POSTGRES_PASSWORD
+
+              value: "{{ .Values.movieDb.password }}"
+
+            - name: POSTGRES_DB
+
+              value: "{{ .Values.movieDb.database }}"
+
+          volumeMounts:
+
+            - name: data
+
+              mountPath: /var/lib/postgresql/data
+
+      volumes:
+
+        - name: data
+
+          persistentVolumeClaim:
+
+            claimName: movie-db-pvc
+---
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: cast-db
+
+spec:
+
+  selector:
+
+    matchLabels:
+
+      app: cast-db
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: cast-db
+
+    spec:
+
+      containers:
+
+        - name: cast-db
+
+          image: {{ .Values.movieDb.image }}
+
+          env:
+
+            - name: POSTGRES_USER
+
+              value: "{{ .Values.castDb.username }}"
+
+            - name: POSTGRES_PASSWORD
+
+              value: "{{ .Values.castDb.password }}"
+
+            - name: POSTGRES_DB
+
+              value: "{{ .Values.castDb.database }}"
+
+          volumeMounts:
+
+            - name: data
+
+              mountPath: /var/lib/postgresql/data
+
+      volumes:
+
+        - name: data
+
+          persistentVolumeClaim:
+
+            claimName: cast-db-pvc
