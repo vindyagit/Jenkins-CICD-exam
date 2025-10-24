@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: cast-service
+
+spec:
+
+  replicas: {{ .Values.castService.replicaCount }}
+
+  selector:
+
+    matchLabels:
+
+      app: cast-service
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: cast-service
+
+    spec:
+
+      containers:
+
+        - name: cast-service
+
+          image: '{{ .Values.castService.image.repository }}:{{ .Values.castService.image.tag | default .Chart.AppVersion }}'
+
+          imagePullPolicy: {{ .Values.castService.image.pullPolicy }}
+
+          ports:
+
+            - containerPort: {{ .Values.castService.port }}
+
+          env:
+
+            - name: DATABASE_URI
+
+              value: "{{ .Values.castService.env.DATABASE_URI }}"
