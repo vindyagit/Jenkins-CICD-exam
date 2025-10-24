@@ -14,7 +14,7 @@ movieService:
 
   env:
 
-    DATABASE_URI: "postgresql://movie_db_username:movie_db_password@movie_db/movie_db_dev"
+    DATABASE_URI: "postgresql://movie_db_username:movie_db_password@movie-db/movie_db_dev"
 
     CAST_SERVICE_HOST_URL: "http://cast-service:8000/api/v1/casts/"
 
@@ -35,7 +35,7 @@ castService:
 
   env:
 
-    DATABASE_URI: "postgresql://cast_db_username:cast_db_password@cast_db/cast_db_dev"
+    DATABASE_URI: "postgresql://cast_db_username:cast_db_password@cast-db/cast_db_dev"
 
 movieDb:
 
