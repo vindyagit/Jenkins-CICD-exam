@@ -87,3 +87,31 @@ spec:
     - port: 8080
 
       targetPort: {{ .Values.nginx.port }}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-db
+spec:
+  selector:
+    app: movie-db
+  ports:
+    - port: 5432
+  type: ClusterIP 
+
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cast-db
+spec:
+  selector:
+    app: cast-db
+  ports:
+    - port: 5432
+  type: ClusterIP 
