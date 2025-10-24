@@ -28,7 +28,7 @@ spec:
 
         - name: cast-db
 
-          image: {{ .Values.movieDb.image }}
+          image: {{ .Values.castDb.image | quote }}
 
           env:
 
