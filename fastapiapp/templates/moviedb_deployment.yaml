@@ -34,15 +34,15 @@ spec:
 
             - name: POSTGRES_USER
 
-              value: "{{ .Values.movieDb.username }}"
+              value: "{{ .Values.movieDb.POSTGRES_USER }}"
 
             - name: POSTGRES_PASSWORD
 
-              value: "{{ .Values.movieDb.password }}"
+              value: "{{ .Values.movieDb.POSTGRES_PASSWORD }}"
 
             - name: POSTGRES_DB
 
-              value: "{{ .Values.movieDb.database }}"
+              value: "{{ .Values.movieDb.POSTGRES_DB }}"
 
           volumeMounts:
 
