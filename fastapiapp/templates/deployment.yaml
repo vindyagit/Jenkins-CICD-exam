@@ -30,7 +30,7 @@ spec:
 
         - name: movie-service
 
-          image: "{{ .Values.movieService.image.repository }}:{{ .Values.movieService.image.tag }}"
+          image: "{{ .Values.movieService.image.repository }} : {{ .Values.movieService.image.tag }}"
 
           imagePullPolicy: {{ .Values.movieService.image.pullPolicy }}
 
