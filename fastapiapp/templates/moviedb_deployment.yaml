@@ -28,7 +28,7 @@ spec:
 
         - name: movie-db
 
-          image: {{ .Values.movieDb.image }}
+          image: {{ .Values.movieDb.image | quote }}
 
           env:
 
