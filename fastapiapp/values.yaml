@@ -71,13 +71,13 @@ nginx:
 
       location /movies/ {
 
-        proxy_pass http://movie-service:8000/movies/;
+        proxy_pass http://movie-service:8000/;
 
       }
 
       location /casts/ {
 
-        proxy_pass http://cast-service:8000/casts/;
+        proxy_pass http://cast-service:8000/;
 
       }
 
@@ -87,6 +87,14 @@ serviceAccount:
   create: false
   annotations: {}
   name: ""
+
+service:
+
+  name: nginx
+
+  port: 8080  
+
+  
 
 
 ingress:
