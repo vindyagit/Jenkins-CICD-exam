@@ -40,9 +40,9 @@ spec:
 
           env:
 
-            - name: DATABASE_URI
+            - name: DATABASE_URL
 
-              value: "{{ .Values.movieService.env.DATABASE_URI }}"
+              value: "{{ .Values.movieService.env.DATABASE_URL }}"
 
             - name: CAST_SERVICE_HOST_URL
 

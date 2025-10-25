@@ -40,9 +40,9 @@ spec:
 
           env:
 
-            - name: DATABASE_URI
+            - name: DATABASE_URL
 
-              value: "{{ .Values.castService.env.DATABASE_URI}}"
+              value: "{{ .Values.castService.env.DATABASE_URL}}"
 
             - name: POSTGRES_USER
 
