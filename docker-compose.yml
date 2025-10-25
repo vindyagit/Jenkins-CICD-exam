@@ -9,7 +9,7 @@ services:
     ports:
       - 8001:8000
     environment:
-      - DATABASE_URL=postgresql://movie_db_username:movie_db_password@movie-db/movie_db_dev
+      - DATABASE_URI=postgresql://movie_db_username:movie_db_password@movie-db/movie_db_dev
       - CAST_SERVICE_HOST_URL=http://cast_service:8000/api/v1/casts/
     depends_on:
       - movie_db
@@ -31,7 +31,7 @@ services:
     ports:
       - 8002:8000
     environment:
-      - DATABASE_URL=postgresql://cast_db_username:cast_db_password@cast-db/cast_db_dev
+      - DATABASE_URI=postgresql://cast_db_username:cast_db_password@cast-db/cast_db_dev
     depends_on:
       - cast_db
 
