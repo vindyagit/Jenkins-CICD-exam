@@ -8,7 +8,7 @@ movieService:
 
     tag: latest
 
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
 
   port: 8000
 
@@ -29,7 +29,7 @@ castService:
 
     tag: latest
 
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
 
   port: 8000
 
