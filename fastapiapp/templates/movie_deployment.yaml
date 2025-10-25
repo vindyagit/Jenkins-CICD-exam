@@ -40,9 +40,9 @@ spec:
 
           env:
 
-            - name: DATABASE_URL
+            - name: DATABASE_URI
 
-              value: "{{ .Values.movieService.env.DATABASE_URL }}"
+              value: "{{ .Values.movieService.env.DATABASE_URI }}"
 
             - name: CAST_SERVICE_HOST_URL
 
@@ -52,7 +52,7 @@ spec:
 
               value: "{{ .Values.movieDb.POSTGRES_USER }}"
 
-            - name: POSTGRES_PASSWORD
+            - name: POSTGRES_PASSWORDS
 
               value: "{{ .Values.movieDb.POSTGRES_PASSWORD }}"
 
