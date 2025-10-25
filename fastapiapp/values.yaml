@@ -94,7 +94,7 @@ service:
 
   port: 8080
 
-  nodePort: 30007  
+  nodePort: 32091 
 
   targetPort: 8000
 
