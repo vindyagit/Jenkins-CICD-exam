@@ -40,10 +40,10 @@ spec:
 
           env:
 
-            - name: DATABASE_URI
+            - name: DATABASE_URL
 
               value: movie-db
-              
+
             - name: POSTGRES_USER
 
               value: "{{ .Values.movieDb.POSTGRES_USER }}"
