@@ -42,12 +42,8 @@ spec:
 
             - name: DATABASE_URI
 
-              value: "{{ .Values.movieService.env.DATABASE_URI }}"
-
-            - name: CAST_SERVICE_HOST_URL
-
-              value: "{{ .Values.movieService.env.CAST_SERVICE_HOST_URL }}"
-
+              value: movie-db
+              
             - name: POSTGRES_USER
 
               value: "{{ .Values.movieDb.POSTGRES_USER }}"
