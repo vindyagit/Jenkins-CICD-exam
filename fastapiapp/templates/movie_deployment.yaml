@@ -59,7 +59,4 @@ spec:
             - name: POSTGRES_DB
 
               value: "{{ .Values.movieDb.POSTGRES_DB }}"
- 
-          command: ["uvicorn"]
 
-          args: ["main:app", "--host", "0.0.0.0", "--port", "8000"]
