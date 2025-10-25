@@ -34,15 +34,21 @@ spec:
 
           imagePullPolicy: {{ .Values.movieService.image.pullPolicy }}
 
+          command: ["uvicorn"]
+          args: ["app.main:app", "--host", "0.0.0.0", "--port", "8000"]
           ports:
 
             - containerPort: {{ .Values.movieService.port }}
 
           env:
 
-            - name: DATABASE_URL
+            - name: DATABASE_URI
 
-              value: movie-db
+              value: "{{ .Values.movieService.env.DATABASE_URI }}"
+
+            - name: CAST_SERVICE_HOST_URL
+
+              value: "{{ .Values.movieService.env.CAST_SERVICE_HOST_URL }}"
 
             - name: POSTGRES_USER
 
