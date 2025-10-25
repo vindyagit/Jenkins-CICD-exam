@@ -90,7 +90,7 @@ serviceAccount:
 
 service:
 
-  name: nginx
+  name: LoadBalancer
 
   port: 8080  
 
