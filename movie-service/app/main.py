@@ -1,3 +1,5 @@
+# Main.py of movie-service
+
 from fastapi import FastAPI
 from app.api.movies import movies
 from app.api.db import metadata, database, engine

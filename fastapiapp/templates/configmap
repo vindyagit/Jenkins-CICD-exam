@@ -1,3 +1,5 @@
+# configmap of nginx
+
 apiVersion: v1
 kind: ConfigMap
 metadata:

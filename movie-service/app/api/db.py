@@ -5,6 +5,8 @@ from sqlalchemy import (Column, DateTime, Integer, MetaData, String, Table,
 
 from databases import Database
 
+# Changed URI to URL in the code
+
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 engine = create_engine(DATABASE_URL)

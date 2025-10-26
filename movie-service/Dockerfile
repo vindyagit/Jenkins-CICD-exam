@@ -1,3 +1,4 @@
+# Docker image of movie-service 
 FROM python:3.8-slim
 
 WORKDIR /app

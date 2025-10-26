@@ -1,3 +1,4 @@
+# Docker compose to build all services
 version: '3.7'
 
 services:

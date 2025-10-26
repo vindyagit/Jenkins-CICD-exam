@@ -1,3 +1,4 @@
+# Values.yaml for all the service and deployments
 replicaCount: 1
 
 movieService:
