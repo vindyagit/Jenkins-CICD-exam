@@ -165,9 +165,7 @@ pipeline {
           cp fastapiapp/values.yaml values.yml
 
           cat values.yml
-
-          sed -i "s+tag.*+tag: ${DOCKER_TAG}+g" values.yml
-
+          
           helm upgrade --install app fastapiapp --values=values.yml --namespace qa
 
           '''
@@ -205,8 +203,6 @@ pipeline {
           cp fastapiapp/values.yaml values.yml
 
           cat values.yml
-
-          sed -i "s+tag.*+tag: ${DOCKER_TAG}+g" values.yml
 
           helm upgrade --install app fastapiapp --values=values.yml --namespace staging
 
@@ -254,8 +250,6 @@ pipeline {
           cp fastapiapp/values.yaml values.yml
 
           cat values.yml
-
-          sed -i "s+tag.*+tag: ${DOCKER_TAG}+g" values.yml
 
           helm upgrade --install app fastapiapp --values=values.yml --namespace prod
 
